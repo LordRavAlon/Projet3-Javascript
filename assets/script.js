@@ -21,21 +21,22 @@ const slides = [
 const image = document.querySelector("#banner .banner-img");
 const tagLine = document.querySelector("#banner p");
 const dots = document.querySelectorAll("#banner .dots .dot");
-let i=0;
+let i = 0;
 
 function moveLeft() {
 	dots[i].classList.remove("dot_selected");
-	if (i===0) {
-		i=3;
-		
+	if (i === 0) {
+		i = 3;
+
 	}
-	else{
-		i--;}
-		
+	else {
+		i--;
+	}
+
 	dots[i].classList.add("dot_selected");
 	image.src = "./assets/images/slideshow/" + slides[i].image;
 	tagLine.innerHTML = slides[i].tagLine;
-    
+
 }
 
 const flecheGauche = document.getElementById("button_left");
@@ -43,13 +44,14 @@ flecheGauche.addEventListener("click", moveLeft);
 
 function moveRight() {
 	dots[i].classList.remove("dot_selected");
-	if (i===3) {
-		i=0;
-		
+	if (i === 3) {
+		i = 0;
+
 	}
-	else{
-		i++;}
-		
+	else {
+		i++;
+	}
+
 	dots[i].classList.add("dot_selected");
 	image.src = "./assets/images/slideshow/" + slides[i].image;
 	tagLine.innerHTML = slides[i].tagLine;

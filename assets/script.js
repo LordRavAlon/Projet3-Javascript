@@ -25,11 +25,17 @@ let i=0;
 
 function moveLeft() {
 	dots[i].classList.remove("dot_selected");
-	i--;
+	if (i===0) {
+		i=3;
+		
+	}
+	else{
+		i--;}
+		
 	dots[i].classList.add("dot_selected");
 	image.src = "./assets/images/slideshow/" + slides[i].image;
 	tagLine.innerHTML = slides[i].tagLine;
-	
+    
 }
 
 const flecheGauche = document.getElementById("button_left");
@@ -37,7 +43,13 @@ flecheGauche.addEventListener("click", moveLeft);
 
 function moveRight() {
 	dots[i].classList.remove("dot_selected");
-	i++;
+	if (i===3) {
+		i=0;
+		
+	}
+	else{
+		i++;}
+		
 	dots[i].classList.add("dot_selected");
 	image.src = "./assets/images/slideshow/" + slides[i].image;
 	tagLine.innerHTML = slides[i].tagLine;
